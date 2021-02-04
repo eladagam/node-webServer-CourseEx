@@ -6,6 +6,9 @@ const app = express()
 const geoCode = require('./utils/geoCode')
 const forecast = require('./utils/forecast')
 
+//for heroku
+const port = process.env.PORT || 3000
+
 
 //console.log(__dirname)
 //console.log(path.join(__dirname,'../public'))  //go back a folder and in public ==> cd ../public 
@@ -118,7 +121,13 @@ app.get('*', (req , res)=> {   //* = Default route
 // })
 
 
-app.listen(3000,()=>{
+// app.listen(3000,()=>{
+//     console.log('start server')
+
+// }) //start the server = listen to 3000
+
+
+app.listen(port,()=>{
     console.log('start server')
 
 }) //start the server = listen to 3000
